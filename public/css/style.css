@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    flex: 1;
+  flex: 1;
 }
 
 /* Navbar */
@@ -110,10 +110,44 @@ body {
   background-color: white;
 }
 
-
 /* New Page */
 .add-btn {
-    background-color: #fe424d !important;
-    border: none !important;
+  background-color: #fe424d !important;
+  border: none !important;
 }
 
+/* Edit Page */
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* Show Page */
+.show-img {
+  height: 30vh;
+}
+
+.btns {
+  display: flex;
+}
+
+.e-btn {
+  margin-left: 25rem;
+  height: 2.5rem;
+  width: 7rem;
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+.del-btn {
+  margin-left: 1rem;
+  height: 2.5rem;
+  width: 7rem;
+  background-color: black !important;
+  border: none !important;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}

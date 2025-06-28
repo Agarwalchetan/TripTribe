@@ -94,6 +94,10 @@ app.delete("/listings/:id", async (req,res) => {
 //   res.send("successful testing");
 // });
 
+app.use((err ,req ,res ,next) => {
+  res.send("something went wrong");
+});
+
 app.listen(port, () => {
   console.log(`server is listening to ${port}`);
 });

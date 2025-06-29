@@ -41,7 +41,35 @@
   </form>
 </div>
 <br />
+
+
 <div class="col-6 offset-2 mb-3">
+
+<!-- All Reviews -->
+  <hr />
+  <h4>All Reviews</h4>
+
+  <div class="row">
+    <% for(review of listing.reviews){ %>
+    <div class="card col-5 ms-3 mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Jane Doe</h5>
+        <p class="card-text"><%= review.comment %></p>
+        <p class="card-text"><%= review.rating %>stars</p>
+      </div>
+      <form
+        method="POST"
+        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+        class="mb-3 mt-2"
+      >
+        <button class="btn btn-sm btn-dark">Delete</button>
+      </form>
+    </div>
+    <% } %>
+  </div>
+
+
+<!-- Leave a Comment -->
   <hr />
   <h4>Leave a Review</h4>
   <form
@@ -76,27 +104,7 @@
     <br />
     <button class="btn btn-outline-dark">Submit</button>
   </form>
-  <hr />
-  <h4>All Reviews</h4>
 
-  <div class="row">
-    <% for(review of listing.reviews){ %>
-    <div class="card col-5 ms-3 mb-3">
-      <div class="card-body">
-        <h5 class="card-title">Jane Doe</h5>
-        <p class="card-text"><%= review.comment %></p>
-        <p class="card-text"><%= review.rating %>stars</p>
-      </div>
-      <form
-        method="POST"
-        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-        class="mb-3 mt-2"
-      >
-        <button class="btn btn-sm btn-dark">Delete</button>
-      </form>
-    </div>
-    <% } %>
-  </div>
 
   <br /><br /><br />
 </div>

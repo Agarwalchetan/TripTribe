@@ -76,7 +76,7 @@ body {
 }
 
 /* Cards */
-.card {
+.listing-card-home {
   border: none !important;
   margin-bottom: 2rem;
 }

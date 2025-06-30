@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
   // if (!err.message) err.message = "Something went wrong!";
-  res.status(statusCode).render("error.ejs", { err });
+  res.status(statusCode).render("error.ejs", { message });
 });
 
 app.listen(port, () => {

@@ -38,9 +38,20 @@ router.post(
     failureFlash: true,
   }),
   async (req, res) => {
-    res.flash("success","Welcome back to Wanderlust!");
-    res.redirect("/listings"); 
+    res.flash("success", "Welcome back to Wanderlust!");
+    res.redirect("/listings");
   }
 );
+
+//Logout User
+router.get("/logout", (req, res) => {
+  req.logOut((err) => {
+    if (err) {
+      return next(err);
+    }
+    req.flash("success", "you are logged out!");
+    res.redirect("/listings");
+  });
+});
 
 module.exports = router;

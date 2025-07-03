@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const port = 8080;
@@ -17,8 +21,9 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const extraRouter = require("./routes/extra.js");
 
-
 const MONGO_URL = "mongodb://127.0.0.1:27017/TripTribe";
+
+
 
 main()
   .then(() => {
@@ -69,12 +74,12 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //Connect flash
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   res.locals.currUser = req.user;
   next();
-})
+});
 
 //Listings
 app.use("/listings", listingRouter);
@@ -86,8 +91,7 @@ app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
 //Extra
-app.use("/" , extraRouter);
-
+app.use("/", extraRouter);
 
 //Page Not Found
 app.use((req, res, next) => {
@@ -98,7 +102,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong" } = err;
   // if (!err.message) err.message = "Something went wrong!";
-  res.status(statusCode).render("error.ejs", { message });
+  res.status(statusCode).render("error.ejs", { err });
 });
 
 app.listen(port, () => {

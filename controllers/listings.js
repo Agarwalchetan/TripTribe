@@ -27,12 +27,21 @@ module.exports.showListings = async (req, res) => {
 };
 
 module.exports.createListings = async (req, res) => {
-  let listing = req.body.listing;
-  const newListing = new Listing(listing);
+  const listingData = req.body.listing;
+  const newListing = new Listing(listingData);
+
+  if (req.file) {
+    newListing.image = {
+      url: req.file.path,
+      filename: req.file.filename,
+    };
+  }
+
   newListing.owner = req.user._id;
+
   await newListing.save();
   req.flash("success", "New Listing Created!");
-  res.redirect("/listings");
+  res.redirect(`/listings/${newListing._id}`);
 };
 
 module.exports.renderEditForm = async (req, res) => {

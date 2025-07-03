@@ -148,6 +148,34 @@ body {
 }
 
 .show-card {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* FAQs */
+
+.styled-accordion .accordion-button {
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+  border-radius: 0.5rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.styled-accordion .accordion-button:not(.collapsed) {
+  background-color: #ffefc7;
+  color: #d35400;
+  box-shadow: 0 0 0 2px #ffdd99;
+}
+
+.styled-accordion .accordion-button:focus {
+  box-shadow: none;
+}
+
+.faq-arrow {
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .faq-arrow {
+  transform: rotate(180deg);
 }

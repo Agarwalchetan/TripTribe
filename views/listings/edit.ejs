@@ -34,15 +34,22 @@
     </textarea
           >
           <div class="invalid-feedback">Description should be valid!</div>
+
+          <br>
+          <label for="originalImage" class="form-label"> Original Image</label>
+          <div class="mb-3">
+            <img
+              src="<%= listing.image.url %>"
+              class="img-fluid rounded shadow-sm"
+              style="max-height: 200px"
+              alt="Current Listing Image"
+            />
+          </div>
         </div>
         <div class="mb-3">
-          <label for="image" class="form-label"> Uplaod New Image</label>
+          <label for="image" class="form-label"> Upload New Image</label>
 
-          <input
-            name="image"
-            type="file"
-            class="form-control"
-          />
+          <input name="image" type="file" class="form-control" />
           <div class="invalid-feedback">Image should be valid!</div>
         </div>
         <div class="row">

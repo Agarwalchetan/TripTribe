@@ -1,36 +1,55 @@
 <% layout("layouts/boilerplate") %>
 
-<div class="row mt-3">
-  <h1 class="col-6 offset-3">Login on TripTribe</h1>
-  <br /><br />
-  <br />
-  <div class="col-6 offset-3">
+<div class="container d-flex justify-content-center align-items-center mt-5 mb-5">
+  <div class="card shadow-lg p-4 col-md-6">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Welcome Back to <span class="text-danger">TripTribe</span> 👋</h2>
+      <p class="text-muted">Log in to plan your next adventure</p>
+    </div>
+
     <form action="/login" method="POST" class="needs-validation" novalidate>
       <div class="mb-3">
-        <label for="username" class="form-label"><b>Username</b></label>
+        <label for="username" class="form-label">
+          <i class="bi bi-person-fill"></i> Username
+        </label>
         <input
           name="username"
-          placeholder="Enter Username"
           id="username"
           type="text"
           class="form-control"
+          placeholder="Your username"
           required
         />
+        <div class="invalid-feedback">Please enter your username.</div>
       </div>
 
-
       <div class="mb-3">
-        <label for="password" class="form-label"><b>Password</b></label>
+        <label for="password" class="form-label">
+          <i class="bi bi-lock-fill"></i> Password
+        </label>
         <input
           name="password"
-          placeholder="Enter Password"
           id="password"
           type="password"
           class="form-control"
+          placeholder="Your password"
           required
         />
+        <div class="invalid-feedback">Please enter your password.</div>
       </div>
-      <button class="btn btn-success">Login</button>
+
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-success">
+          <i class="bi bi-box-arrow-in-right"></i> Login
+        </button>
+      </div>
     </form>
+
+    <div class="text-center mt-3">
+      <p class="text-muted">
+        Don't have an account?
+        <a href="/signup" class="text-decoration-none">Sign up now</a>
+      </p>
+    </div>
   </div>
 </div>

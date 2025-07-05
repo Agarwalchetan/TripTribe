@@ -1,4 +1,7 @@
 <% layout("layouts/boilerplate") %>
+<script>
+    let mapToken = "<%= process.env.MAP_API_KEY %>";
+</script>
 
 <!-- <form action="/listings">
         <button>Home</button>
@@ -48,6 +51,7 @@
 
 <div class="col-6 offset-2 mb-3">
   <!-- All Reviews -->
+  <% if(listing.reviews.length > 0) { %>
   <hr />
   <h4>All Reviews</h4>
 
@@ -72,10 +76,12 @@
     </div>
     <% } %>
   </div>
+  <% } %>
 
   <!-- Leave a Comment -->
-  <hr />
+
   <% if(currUser) {%>
+  <hr />
   <h4>Leave a Review</h4>
   <form
     method="POST"
@@ -134,6 +140,14 @@
     <button class="btn btn-outline-dark">Submit</button>
   </form>
   <% } %>
-
-  <br /><br /><br />
 </div>
+
+<div class="col-6 offset-2 mb-3">
+  <hr />
+  <h3>Where you'll be</h3>
+  <div id="map"></div>
+</div>
+
+<script src="/js/map.js"></script>
+
+

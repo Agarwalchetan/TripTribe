@@ -179,3 +179,10 @@ body {
 .accordion-button:not(.collapsed) .faq-arrow {
   transform: rotate(180deg);
 }
+
+/* map */
+#map {
+  width: 92vh;
+  height: 350px;
+  border-radius: 20px;
+}

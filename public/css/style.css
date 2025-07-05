@@ -204,24 +204,88 @@ body {
   font-size: 14px;
 }
 
-/* Index icons */
+/* Common styles */
 #filters {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Important for scrolling */
+  overflow-x: auto;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  align-items: center;
+}
+
+/* Hide scroll bar (optional) */
+#filters::-webkit-scrollbar {
+  display: none;
 }
 
 .filter {
+  flex: 0 0 auto; /* Prevent shrinking */
   text-align: center;
-  margin: 1.5rem;
-  margin-top: 2rem;
   opacity: 0.7;
+  transition: transform 0.2s ease;
+  min-width: 50px; /* optional: controls how wide each icon is */
 }
 
 .filter:hover {
   opacity: 1;
+  transform: scale(1.1);
   cursor: pointer;
 }
 
 .filter p {
   font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+
+/* ========== Base Styles ========== */
+
+.tax-info {
+  display: none; /* shown only when toggled with JS */
+}
+
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 3rem;
+  padding: 1rem;
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* Optional: make scrollbars invisible if it scrolls */
+.tax-toggle::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========== Tablet View ========== */
+@media (max-width: 768px) {
+  .tax-toggle {
+    margin-left: 2rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== Mobile View ========== */
+@media (max-width: 480px) {
+  .tax-toggle {
+    margin-left: 1rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 0.8rem;
+    height: auto; /* allow height to adjust on smaller screens */
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+
+  .tax-toggle::-webkit-scrollbar {
+    display: none;
+  }
 }

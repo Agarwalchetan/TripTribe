@@ -240,7 +240,6 @@ body {
   margin-top: 0.4rem;
 }
 
-
 /* ========== Base Styles ========== */
 
 .tax-info {
@@ -288,4 +287,24 @@ body {
   .tax-toggle::-webkit-scrollbar {
     display: none;
   }
+}
+
+
+/* Search Navbar */
+.btn-search {
+  background-color: #fe424d;
+  color: #fff;
+  border-radius: 25px;
+  padding: 0 1rem 0 1rem;
+}
+
+.btn-search:hover {
+  background-color: #fe424d;
+  color: #fff;
+}
+
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  font-size: 1rem;
 }

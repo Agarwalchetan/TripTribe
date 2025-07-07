@@ -54,11 +54,12 @@ TripTribe lets users:
 2. Add environment variables in a `.env` file:
 
 ```
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_KEY=your_key
-CLOUDINARY_SECRET=your_secret
-DB_URL=your_mongodb_connection
-SECRET=your_session_secret
+CLOUD_NAME=your_cloud_name
+CLOUD_API_KEY=your_cloud_apiKey
+CLOUD_API_SECRET=your_cloud_apiSecret
+MAP_API_KEY=tomtom_map_Api
+ATLASDB_URL=mongo_altas_URL
+SECRET=anySecretKey
 ```
 
 3. Optionally seed the database using `node init.js`
